@@ -14,11 +14,15 @@ public class OrderApp {
 
         AppConfig appConfig = new AppConfig();
         MemberService memberService = appConfig.memberService();
-        Member member = new Member(1L, "memberA", Grade.BASIC);
+        OrderService orderService = appConfig.orderService();
+
+        Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
+        Order order = orderService.createOrder(1L,"itemA", 20000);
+
         Member findMember = memberService.findMember(1L);
-        System.out.println("new Member = " + member.getName());
-        System.out.println("find Member = " +findMember.getName());
+
+        System.out.println("order = " + order);
     }
 }
