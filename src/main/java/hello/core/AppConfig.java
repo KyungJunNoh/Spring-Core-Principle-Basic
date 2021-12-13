@@ -7,6 +7,7 @@ import hello.core.member.MemoryMemberRepository;
 import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 
+// DI ( Dependency Injection - 의존성 주입 )
 // 애플리케이션의 실제 동작에 필요한 구현 객체를 생성 한다.
 public class AppConfig {
 
