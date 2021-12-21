@@ -17,18 +17,33 @@ import org.springframework.context.annotation.Configuration;
 @Configuration // 애플리케이션의 설정 정보 선언
 public class AppConfig {
 
+    // 생각했던 값
+    // call AppConfig.memberService
+    // call AppConfig.memberRepository
+    // call AppConfig.memberRepository
+    // call AppConfig.orderService
+    // call AppConfig.memberRepository
+
+    // 실제 값
+    // call AppConfig.memberService
+    // call AppConfig.memberRepository // 메소드가 한 번만 호출됨
+    // call AppConfig.orderService
+
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository()); // 생성자 주입
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository(); // 추후에 다른 구현체로 바꿀때 이 부분만 바꿔주면 된다.
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(
                 memberRepository(),
                 discountPolicy()
