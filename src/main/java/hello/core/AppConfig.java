@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 // DI ( Dependency Injection - 의존성 주입 )
 // 애플리케이션의 실제 동작에 필요한 구현 객체를 생성 한다.
-@Configuration // 애플리케이션의 설정 정보 선언
+@Configuration // 애플리케이션의 설정 정보 선언 // @Configuration 이 싱글톤을 유지해주는 핵심 어노테이션이다 이게 없으면 싱글톤이 깨져버린다.
 public class AppConfig {
 
     // 생각했던 값
