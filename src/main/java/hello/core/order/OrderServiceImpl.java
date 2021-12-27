@@ -15,8 +15,10 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository; // 인터페이스에만 의존하도록 변경 ( DIP 지킴 )
     private final DiscountPolicy discountPolicy; // 인터페이스에만 의존하도록 변경 ( DIP 지킴 )
 
-    @Autowired
+    @Autowired // @Autowired 는 생성자가 두개 이상 있을 경우에 사용하며 생성자가 한개라면 사용을 안해도 @Component 가 자동으로 주입 해준다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        System.out.println("memberRepository = " + memberRepository);
+        System.out.println("discountPolicy = " + discountPolicy);
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
