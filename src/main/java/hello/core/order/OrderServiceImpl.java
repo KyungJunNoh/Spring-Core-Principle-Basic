@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor // final 이 붙은 필드에 생성자를 주입 // lombok 에서 지원
+@RequiredArgsConstructor // final 이 붙은 필드에 생성자를 주입 // lombok 에서 지원g
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository; // 인터페이스에만 의존하도록 변경 ( DIP 지킴 )
