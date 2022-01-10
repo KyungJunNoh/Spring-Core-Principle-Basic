@@ -21,6 +21,8 @@ public class LogDemoController {
     public String logDemo(HttpServletRequest request) throws InterruptedException { // 자바에서 제공하는 표준 서블릿 정보에서 request 를 가져옴
         String requestUrl = request.getRequestURL().toString();
         MyLogger myLogger = myLoggerObjectProvider.getObject();
+        System.out.println("myLogger = " + myLogger.getClass());
+
         myLogger.setRequestURL(requestUrl);
 
         myLogger.log("controller test");
